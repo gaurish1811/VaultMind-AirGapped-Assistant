@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VaultMind — The Air-Gapped Privacy-First Executive Assistant</title>
+  <meta name="description" content="An autonomous, local AI agent that manages your most sensitive data—emails, finances, medical records—entirely on consumer-grade hardware without ever touching the cloud. Complete data sovereignty for high-privacy industries." />
+  <meta property="og:title" content="VaultMind — Air-Gapped Executive AI" />
+  <meta property="og:description" content="Your data. Your hardware. Zero cloud. Complete sovereignty." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2L4 7V14C4 19.5 8.5 24.5 14 26C19.5 24.5 24 19.5 24 14V7L14 2Z" stroke="url(#shield-grad)" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M10 14L13 17L18 11" stroke="url(#shield-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="shield-grad" x1="4" y1="2" x2="24" y2="26" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00e5ff"/>
+                <stop offset="100%" stop-color="#7c3aed"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">VaultMind</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#tech-stack" class="nav-link">Tech Stack</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#industries" class="nav-link">Industries</a>
+        <a href="#cta" class="nav-cta-btn" id="nav-cta">Get Early Access</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#features" class="mobile-link">Features</a>
+    <a href="#tech-stack" class="mobile-link">Tech Stack</a>
+    <a href="#how-it-works" class="mobile-link">How It Works</a>
+    <a href="#industries" class="mobile-link">Industries</a>
+    <a href="#cta" class="mobile-cta">Get Early Access</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge" id="hero-badge">
+        <span class="badge-dot"></span>
+        <span>100% Offline · Zero Cloud · Complete Sovereignty</span>
+      </div>
+      <h1 class="hero-title" id="hero-title">
+        The Executive AI That<br/>
+        <span class="gradient-text">Never Leaves Your Device</span>
+      </h1>
+      <p class="hero-sub" id="hero-sub">
+        An autonomous local agent that manages your most sensitive data — emails, finances, medical records —
+        entirely on consumer-grade hardware. <strong>No cloud. No exposure. No compromise.</strong>
+      </p>
+      <div class="hero-actions" id="hero-actions">
+        <a href="#cta" class="btn-primary" id="hero-cta-primary">
+          <span>Request Early Access</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn-ghost" id="hero-cta-secondary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 6C6.5 5.17 7.17 4.5 8 4.5C8.83 4.5 9.5 5.17 9.5 6C9.5 6.83 8.83 7.5 8 7.5V9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="11" r="0.6" fill="currentColor"/></svg>
+          How It Works
+        </a>
+      </div>
+      <div class="hero-stats" id="hero-stats">
+        <div class="stat">
+          <span class="stat-value">7B</span>
+          <span class="stat-label">Param LLM, Local</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">0</span>
+          <span class="stat-label">Cloud Calls</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">∞</span>
+          <span class="stat-label">Data Sovereignty</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" id="hero-visual">
+      <div class="hero-glow"></div>
+      <div class="terminal-window" id="terminal-window">
+        <div class="terminal-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">vaultmind-agent — local</span>
+          <span class="air-gap-badge">
+            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="#00e5a0"/></svg>
+            Air-Gapped
+          </span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="t-line"><span class="t-prompt">›</span> <span class="t-cmd">vaultmind start --offline --model llama3-7b-q4</span></div>
+          <div class="t-line t-success"><span>✓</span> Loading quantized model... <span class="t-dim">(3.9 GB VRAM)</span></div>
+          <div class="t-line t-success"><span>✓</span> Milvus vector DB initialized <span class="t-dim">(local)</span></div>
+          <div class="t-line t-success"><span>✓</span> RAG pipeline ready — <span class="t-teal">2,847 docs indexed</span></div>
+          <div class="t-line t-info"><span class="t-blue">◆</span> Network interfaces: <span class="t-red">ALL BLOCKED</span></div>
+          <div class="t-line"><span class="t-prompt">›</span> <span class="t-cmd">summarize --type email --since yesterday</span></div>
+          <div class="t-line t-typing" id="t-typing">
+            <span class="t-teal">Processing 47 emails locally</span><span class="cursor-blink">▋</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust-bar" id="trust-bar">
+    <div class="trust-inner">
+      <span class="trust-label">Built for</span>
+      <div class="trust-tags">
+        <span class="trust-tag"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="1" width="10" height="12" rx="1.5" stroke="#00e5ff" stroke-width="1.2"/><path d="M4 5H10M4 7H10M4 9H7" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round"/></svg>Legal Firms</span>
+        <span class="trust-tag"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5V7C2 10 4.5 12.5 7 13.5C9.5 12.5 12 10 12 7V3.5L7 1Z" stroke="#00e5ff" stroke-width="1.2" stroke-linejoin="round"/></svg>Healthcare</span>
+        <span class="trust-tag"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="4" r="2.5" stroke="#00e5ff" stroke-width="1.2"/><path d="M2 12C2 9.8 4.2 8 7 8C9.8 8 12 9.8 12 12" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round"/></svg>C-Suite Executives</span>
+        <span class="trust-tag"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="#00e5ff" stroke-width="1.2"/><path d="M4 3V2.5C4 1.67 4.67 1 5.5 1H8.5C9.33 1 10 1.67 10 2.5V3" stroke="#00e5ff" stroke-width="1.2"/></svg>Defense Contractors</span>
+        <span class="trust-tag"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M7 2L12 7L7 12" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Financial Institutions</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section" id="features">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Core Capabilities</div>
+        <h2 class="section-title">Everything a world-class assistant can do.<br/><span class="gradient-text">None of the privacy risk.</span></h2>
+        <p class="section-sub">VaultMind runs the full executive assistant stack — completely offline, completely under your control.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- F1 -->
+        <div class="feature-card feature-large" id="feat-1">
+          <div class="feat-icon-wrap teal">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L5 8V14.5C5 19.5 9 24 14 25.5C19 24 23 19.5 23 14.5V8L14 3Z" stroke="url(#g1)" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 14.5L13.5 17L18 12" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g1" x1="5" y1="3" x2="23" y2="25.5" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+          </div>
+          <div class="feat-content">
+            <h3>Complete Data Sovereignty</h3>
+            <p>Every byte of your sensitive data — legal briefs, patient records, financial reports — stays on your device. No API calls, no telemetry, no third-party servers. Ever.</p>
+          </div>
+          <div class="feat-tag">Zero Egress Guarantee</div>
+        </div>
+
+        <!-- F2 -->
+        <div class="feature-card" id="feat-2">
+          <div class="feat-icon-wrap purple">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="4" stroke="url(#g2)" stroke-width="1.5"/><circle cx="14" cy="14" r="9" stroke="url(#g2)" stroke-width="1" stroke-dasharray="2 3"/><path d="M14 5V3M14 25V23M23 14H25M3 14H5M20.66 7.34L22.07 5.93M5.93 22.07L7.34 20.66M20.66 20.66L22.07 22.07M5.93 5.93L7.34 7.34" stroke="url(#g2)" stroke-width="1" stroke-linecap="round"/><defs><linearGradient id="g2" x1="5" y1="5" x2="23" y2="23" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#00e5ff"/></linearGradient></defs></svg>
+          </div>
+          <h3>Local RAG Engine</h3>
+          <p>Retrieval-Augmented Generation on a Milvus vector database — all on-device. Ask natural language questions across thousands of private documents instantly.</p>
+        </div>
+
+        <!-- F3 -->
+        <div class="feature-card" id="feat-3">
+          <div class="feat-icon-wrap blue">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="8" width="20" height="14" rx="2" stroke="url(#g3)" stroke-width="1.5"/><path d="M9 8V6C9 4.9 9.9 4 11 4H17C18.1 4 19 4.9 19 6V8" stroke="url(#g3)" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 14V18M12 16H16" stroke="url(#g3)" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="g3" x1="4" y1="4" x2="24" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#00e5ff"/></linearGradient></defs></svg>
+          </div>
+          <h3>Email & Calendar AI</h3>
+          <p>Triage, draft, and summarize emails. Manage your calendar with intelligent scheduling — all processed locally with no cloud API dependency.</p>
+        </div>
+
+        <!-- F4 -->
+        <div class="feature-card" id="feat-4">
+          <div class="feat-icon-wrap teal">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 22L6 10M12 22V6M18 22V14M24 22V10" stroke="url(#g4)" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="g4" x1="6" y1="6" x2="24" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs></svg>
+          </div>
+          <h3>Financial Intelligence</h3>
+          <p>Analyze P&L statements, expense reports, and investment portfolios on-device. Your financial data never touches an external server.</p>
+        </div>
+
+        <!-- F5 -->
+        <div class="feature-card" id="feat-5">
+          <div class="feat-icon-wrap purple">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 14C4 8.5 8.5 4 14 4C19.5 4 24 8.5 24 14" stroke="url(#g5)" stroke-width="1.5" stroke-linecap="round"/><path d="M4 14C4 19.5 8.5 24 14 24" stroke="url(#g5)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/><circle cx="14" cy="14" r="3" stroke="url(#g5)" stroke-width="1.5"/><defs><linearGradient id="g5" x1="4" y1="4" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#00e5ff"/></linearGradient></defs></svg>
+          </div>
+          <h3>Medical Record Mgmt</h3>
+          <p>HIPAA-grade data handling built into the architecture — not bolted on. Process, summarize and query patient records with full local encryption.</p>
+        </div>
+
+        <!-- F6 large -->
+        <div class="feature-card feature-large feature-right" id="feat-6">
+          <div class="feat-icon-wrap blue">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="5" width="10" height="14" rx="1.5" stroke="url(#g6)" stroke-width="1.5"/><rect x="15" y="9" width="10" height="10" rx="1.5" stroke="url(#g6)" stroke-width="1.5"/><path d="M13 12H15M13 16H15" stroke="url(#g6)" stroke-width="1" stroke-linecap="round"/><defs><linearGradient id="g6" x1="3" y1="5" x2="25" y2="25" gradientUnits="userSpaceOnUse"><stop stop-color="#60a5fa"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs></svg>
+          </div>
+          <div class="feat-content">
+            <h3>Quantized 7B Model On-Device</h3>
+            <p>Using 4-bit quantization via Llama.cpp, a state-of-the-art 7B parameter LLM runs on a mid-range consumer laptop. Deep engineering, not just API calls — this is the unreplicable moat.</p>
+          </div>
+          <div class="feat-tag feat-tag-purple">The Engineering Moat</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Architecture</div>
+        <h2 class="section-title">How the <span class="gradient-text">Air-Gap Works</span></h2>
+        <p class="section-sub">A four-layer local stack, engineered from the ground up for offline-first operation.</p>
+      </div>
+
+      <div class="how-grid">
+        <div class="how-steps">
+          <div class="how-step" id="step-1">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3>Ingest & Embed</h3>
+              <p>Your documents, emails, and records are chunked and embedded using local Hugging Face Transformer models. No external embedding API. Everything stays on-disk.</p>
+            </div>
+          </div>
+          <div class="how-step" id="step-2">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3>Vector Storage</h3>
+              <p>Embeddings are indexed into a local <strong>Milvus</strong> instance — an enterprise-grade vector database running entirely on your machine. Query millions of vectors in milliseconds.</p>
+            </div>
+          </div>
+          <div class="how-step" id="step-3">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3>RAG Retrieval</h3>
+              <p><strong>LangChain</strong> orchestrates semantic retrieval — your query fetches the most relevant context from your private data vault before hitting the LLM.</p>
+            </div>
+          </div>
+          <div class="how-step" id="step-4">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h3>Local Inference</h3>
+              <p><strong>Ollama / Llama.cpp</strong> runs a quantized 7B LLM at 4-bit precision. Smooth inference on mid-range consumer hardware. Zero network calls. Zero exposure.</p>
+            </div>
+          </div>
+        </div>
+        <div class="how-visual" id="how-visual">
+          <div class="arch-diagram">
+            <div class="arch-node arch-input" id="arch-input">
+              <div class="arch-icon">📄</div>
+              <span>Your Data</span>
+            </div>
+            <div class="arch-arrow" id="arch-a1">
+              <div class="arch-arrow-line"></div>
+              <div class="arch-arrow-label">embed</div>
+            </div>
+            <div class="arch-node arch-hf" id="arch-hf">
+              <div class="arch-icon">🤗</div>
+              <span>HuggingFace<br/>Transformers</span>
+            </div>
+            <div class="arch-arrow" id="arch-a2">
+              <div class="arch-arrow-line"></div>
+              <div class="arch-arrow-label">index</div>
+            </div>
+            <div class="arch-node arch-milvus" id="arch-milvus">
+              <div class="arch-icon">🗄️</div>
+              <span>Milvus<br/>Vector DB</span>
+            </div>
+            <div class="arch-arrow" id="arch-a3">
+              <div class="arch-arrow-line"></div>
+              <div class="arch-arrow-label">retrieve</div>
+            </div>
+            <div class="arch-node arch-langchain" id="arch-langchain">
+              <div class="arch-icon">⛓️</div>
+              <span>LangChain<br/>RAG</span>
+            </div>
+            <div class="arch-arrow" id="arch-a4">
+              <div class="arch-arrow-line"></div>
+              <div class="arch-arrow-label">infer</div>
+            </div>
+            <div class="arch-node arch-llm" id="arch-llm">
+              <div class="arch-icon">🧠</div>
+              <span>Ollama / Llama.cpp<br/>7B (Q4)</span>
+            </div>
+            <div class="arch-arrow arch-arrow-out" id="arch-a5">
+              <div class="arch-arrow-line"></div>
+              <div class="arch-arrow-label">response</div>
+            </div>
+            <div class="arch-node arch-output" id="arch-output">
+              <div class="arch-icon">✅</div>
+              <span>Your Answer</span>
+            </div>
+            <div class="no-cloud-badge" id="no-cloud">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10C3 6 5.5 3 9 3C11 3 13 4 14 5.5C15 5 16 5 17 5.5C18.5 6.5 19 9 17.5 10.5" stroke="#ef4444" stroke-width="1.2" stroke-linecap="round"/><line x1="2" y1="2" x2="18" y2="18" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>No Cloud</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="section" id="tech-stack">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Tech Stack</div>
+        <h2 class="section-title">Built on <span class="gradient-text">Battle-Tested Local AI</span></h2>
+        <p class="section-sub">Every component chosen specifically for local-first, privacy-preserving operation.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card" id="tech-ollama">
+          <div class="tech-logo">🦙</div>
+          <div class="tech-info">
+            <h3>Ollama / Llama.cpp</h3>
+            <p>Quantized LLM inference engine. Runs 7B+ parameter models at 4-bit precision on consumer GPUs. The core inference layer.</p>
+          </div>
+          <div class="tech-tag">Inference Engine</div>
+        </div>
+
+        <div class="tech-card" id="tech-langchain">
+          <div class="tech-logo">⛓️</div>
+          <div class="tech-info">
+            <h3>LangChain</h3>
+            <p>Orchestration framework for chaining retrieval, context injection, and LLM calls. Powers the autonomous agent loop locally.</p>
+          </div>
+          <div class="tech-tag">Orchestration</div>
+        </div>
+
+        <div class="tech-card" id="tech-milvus">
+          <div class="tech-logo">🗄️</div>
+          <div class="tech-info">
+            <h3>Milvus (Local Instance)</h3>
+            <p>Enterprise-grade vector database running fully on-device. Indexes millions of embedding vectors with millisecond retrieval latency.</p>
+          </div>
+          <div class="tech-tag">Vector DB</div>
+        </div>
+
+        <div class="tech-card" id="tech-hf">
+          <div class="tech-logo">🤗</div>
+          <div class="tech-info">
+            <h3>Hugging Face Transformers</h3>
+            <p>Local embedding models from HF Hub for document chunking and semantic encoding. No external API, runs entirely offline.</p>
+          </div>
+          <div class="tech-tag">Embeddings</div>
+        </div>
+      </div>
+
+      <!-- Code snippet -->
+      <div class="code-block" id="code-block">
+        <div class="code-header">
+          <span class="code-file">agent.py</span>
+          <span class="code-lang">Python</span>
+        </div>
+        <pre class="code-content"><code><span class="kw">from</span> langchain.llms <span class="kw">import</span> Ollama
+<span class="kw">from</span> langchain.vectorstores <span class="kw">import</span> Milvus
+<span class="kw">from</span> langchain.embeddings <span class="kw">import</span> HuggingFaceEmbeddings
+<span class="kw">from</span> langchain.chains <span class="kw">import</span> RetrievalQA
+
+<span class="cm"># All local — no network calls made</span>
+llm = Ollama(model=<span class="str">"llama3:7b-q4_0"</span>, base_url=<span class="str">"http://localhost:11434"</span>)
+embeddings = HuggingFaceEmbeddings(model_name=<span class="str">"BAAI/bge-small-en-v1.5"</span>)
+vectordb = Milvus(embedding_function=embeddings, connection_args={<span class="str">"host"</span>: <span class="str">"127.0.0.1"</span>})
+
+<span class="cm"># RAG chain — sovereign, private, offline</span>
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=vectordb.as_retriever(search_kwargs={<span class="str">"k"</span>: <span class="num">5</span>}),
+    return_source_documents=<span class="kw">True</span>
+)
+
+result = qa_chain(<span class="str">"Summarize Q3 financial exposure in my legal contracts"</span>)
+<span class="cm"># ✓ Answered locally. Zero bytes sent to any external server.</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INDUSTRIES ===== -->
+  <section class="section section-alt" id="industries">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Use Cases</div>
+        <h2 class="section-title">Built for <span class="gradient-text">High-Stakes Industries</span></h2>
+      </div>
+      <div class="industry-grid">
+        <div class="industry-card" id="ind-legal">
+          <div class="ind-icon">⚖️</div>
+          <h3>Legal</h3>
+          <p>Attorney-client privilege is sacred. VaultMind lets law firms use AI for contract analysis, case research, and document drafting without breaching confidentiality obligations.</p>
+          <ul>
+            <li>Contract clause extraction</li>
+            <li>Case law semantic search</li>
+            <li>Privilege-safe summarization</li>
+          </ul>
+        </div>
+        <div class="industry-card" id="ind-health">
+          <div class="ind-icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>HIPAA compliance is architecture, not policy. Process PHI, EHRs, and clinical notes with AI assistance — without a BAA or cloud vendor in sight.</p>
+          <ul>
+            <li>Patient record summarization</li>
+            <li>Clinical note drafting</li>
+            <li>Drug interaction lookup</li>
+          </ul>
+        </div>
+        <div class="industry-card" id="ind-exec">
+          <div class="ind-icon">🏛️</div>
+          <h3>Executive Defense</h3>
+          <p>For C-suite leaders whose communications are targets. VaultMind handles your inbox, schedule, and briefings entirely on-device with no exposure surface.</p>
+          <ul>
+            <li>Sensitive email triage</li>
+            <li>Board meeting prep</li>
+            <li>Secure briefing generation</li>
+          </ul>
+        </div>
+        <div class="industry-card" id="ind-defense">
+          <div class="ind-icon">🛡️</div>
+          <h3>Defense & Government</h3>
+          <p>For environments with strict data residency or air-gap mandates. VaultMind can operate in fully disconnected networks with zero cloud dependencies by design.</p>
+          <ul>
+            <li>Classified document QA</li>
+            <li>On-premises deployment</li>
+            <li>SCIF-compatible operation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section cta-section" id="cta">
+    <div class="cta-glow-left"></div>
+    <div class="cta-glow-right"></div>
+    <div class="section-inner cta-inner">
+      <div class="cta-badge">
+        <span class="badge-dot"></span>
+        Limited Early Access — Private Beta
+      </div>
+      <h2 class="cta-title">Your data deserves<br/><span class="gradient-text">sovereignty, not promises.</span></h2>
+      <p class="cta-sub">Join the waitlist for early access. No credit card. No cloud account required — ever.</p>
+      <form class="cta-form" id="cta-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-row">
+          <input type="text" id="form-name" placeholder="Your Name" required autocomplete="off" />
+          <input type="email" id="form-email" placeholder="Work Email" required autocomplete="off" />
+          <select id="form-industry">
+            <option value="">Industry</option>
+            <option>Legal</option>
+            <option>Healthcare</option>
+            <option>Finance</option>
+            <option>Government / Defense</option>
+            <option>Technology</option>
+            <option>Other</option>
+          </select>
+          <button type="submit" class="btn-primary" id="cta-submit-btn">
+            <span>Join Waitlist</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <p class="form-note">🔒 Your email is stored locally in our encrypted list. We'll never share it.</p>
+      </form>
+      <div class="cta-success" id="cta-success">
+        <div class="success-icon">✓</div>
+        <h3>You're on the list!</h3>
+        <p>We'll reach out when early access opens. No cloud required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M14 2L4 7V14C4 19.5 8.5 24.5 14 26C19.5 24.5 24 19.5 24 14V7L14 2Z" stroke="url(#shield-grad-f)" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 14.5L13.5 17L18 12" stroke="url(#shield-grad-f)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="shield-grad-f" x1="4" y1="2" x2="24" y2="26" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#00e5ff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs></svg>
+          </div>
+          <span class="logo-text">VaultMind</span>
+        </div>
+        <p>The Air-Gapped Privacy-First Executive Assistant.<br/>Your data. Your hardware. Your sovereignty.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#tech-stack">Tech Stack</a>
+          <a href="#how-it-works">Architecture</a>
+        </div>
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <a href="#industries">Legal</a>
+          <a href="#industries">Healthcare</a>
+          <a href="#industries">Defense</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 VaultMind. Built with zero cloud dependencies.</span>
+      <div class="footer-badges">
+        <span class="footer-badge">🔒 Air-Gapped</span>
+        <span class="footer-badge">🛡️ No Telemetry</span>
+        <span class="footer-badge">🏠 Local-First</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
